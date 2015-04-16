@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>Animate transition</title>
+
+    <link rel="stylesheet" href="css/transitions.css" type="text/css"/>
+    <link rel="stylesheet" href="theme/css/main.css" type="text/css"/>
+    <link rel="stylesheet" href="examples/index.css" type="text/css"/>
+
+    <script type="text/javascript" src="animateTransition.js"></script>
+    <script type="text/javascript" src="examples/popups.js"></script>
+
+</head>
+<body>
+<div class="github-fork-ribbon-wrapper right">
+    <div class="github-fork-ribbon">
+        <a href="https://github.com/Rapid-Application-Development-JS/AnimateTransition">Fork us on GitHub</a>
+    </div>
+</div>
+<div class="main-container">
+    <div class="top-bar topcoat-navigation-bar top-animation-bar">
+        <div class="topcoat-navigation-bar__item center full">
+            <h1 class="topcoat-navigation-bar__title">Animate Transition</h1>
+        </div>
+    </div>
+    <div class="main main-blocks popup-main-blocks">
+        <div class="animation-container">
+            <div class="section__content animation-container__block first" data-block="out">
+            </div>
+            <div class="section__content animation-container__block second" data-block="in">
+                <div class="code">AnimateTransition({
+    container: container,
+    blockIn: popup,
+    animation: <span data-animation-type>'slide-in'</span>,
+    onTransitionStart: function (blockIn, blockOut, container, event) {
+
+    },
+    onTransitionEnd: function (blockIn, blockOut, container, event) {
+
+    }
+});
+                </div>
+                <button class="topcoat-button animation-container__close">Close</button>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-bar blocks-bottom">
+        <form class="form-options popups-holder">
+            <ul class="topcoat-list__container block-container animation-list" id="animation-list">
+                <li class="topcoat-list__item block-container__item">
+                    <label class="topcoat-radio-button" for="popup-scale-in">
+                        <input type="radio" name="animation" id="popup-scale-in" checked="checked">
+                        <div class="topcoat-radio-button__checkmark"></div>
+                        Popup-scale-in
+                    </label>
+                </li>
+
+                <li class="topcoat-list__item block-container__item">
+                    <label class="topcoat-radio-button" for="popup-drop-in">
+                        <input type="radio" name="animation" id="popup-drop-in" checked="checked">
+                        <div class="topcoat-radio-button__checkmark"></div>
+                        Popup-drop-in
+                    </label>
+                </li>
+
+                <li class="topcoat-list__item block-container__item">
+                    <label class="topcoat-radio-button" for="fade-in">
+                        <input type="radio" name="animation" id="fade-in">
+                        <div class="topcoat-radio-button__checkmark"></div>
+                        Fade-in
+                    </label>
+                </li>
+
+                <li class="topcoat-list__item block-container__item">
+                    <label class="topcoat-radio-button" for="cover-in">
+                        <input type="radio" name="animation" id="cover-in">
+                        <div class="topcoat-radio-button__checkmark"></div>
+                        Cover-in
+                    </label>
+                </li>
+
+                <li class="topcoat-list__item block-container__item">
+                    <label class="topcoat-radio-button" for="cover-double-in">
+                        <input type="radio" name="animation" id="cover-double-in">
+                        <div class="topcoat-radio-button__checkmark"></div>
+                        Cover-double-in
+                    </label>
+                </li>
+                <li class="topcoat-list__item block-container__item">
+                    <label class="topcoat-radio-button" for="cover-double-out">
+                        <input type="radio" name="animation" id="cover-double-out">
+                        <div class="topcoat-radio-button__checkmark"></div>
+                        Cover-double-out
+                    </label>
+                </li>
+                <li class="topcoat-list__item block-container__item">
+                    <label class="topcoat-radio-button" for="revolution-in">
+                        <input type="radio" name="animation" id="revolution-in">
+                        <div class="topcoat-radio-button__checkmark"></div>
+                        Revolution-in
+                    </label>
+                </li>
+
+                <li class="topcoat-list__item block-container__item">
+                    <label class="topcoat-radio-button" for="bounce-in">
+                        <input type="radio" name="animation" id="bounce-in">
+                        <div class="topcoat-radio-button__checkmark"></div>
+                        Bounce-in
+                    </label>
+                </li>
+            </ul>
+
+            <select class="topcoat-select animation-select" id="animation-select">
+                <option value="popup-scale-in">Popup-scale-in</option>
+                <option value="popup-drop-in">Popup-drop-in</option>
+                <option value="fade-in">Fade-in</option>
+                <option value="cover-in">Cover-in</option>
+                <option value="cover-double-in">Cover-double-in</option>
+                <option value="cover-double-out">Cover-double-out</option>
+                <option value="revolution-in">Revolution-in</option>
+                <option value="bounce-in">Bounce-in</option>
+            </select>
+        </form>
+        <div class="buttons-holder">
+            <div class="navigation-bar__item animate-button-blocks-block">
+                <a href="blocks.html" class="topcoat-icon-button animate-button-link">
+                    <i class="fa fa-angle-left"></i>
+                    Animate Blocks
+                </a>
+            </div><div class="navigation-bar__item animate-button-block">
+            <button class="topcoat-button--cta animate-slide">Animate</button>
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
