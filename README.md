@@ -9,6 +9,19 @@ Library for transition animations between blocks (pages) in the application.
 
 `Animate Transition` has no dependencies and supports all modern browsers, including Firefox 31+, Chrome 31+, Safari 7+, Opera 27+, IE 10+, iOS Safari 6.0+, Android Browser 2.3+
 
+###Advantages
+
+Unlike other libraries, `Animate Transition` let you not just animate one element, but made a transition between two in a way you like. It also has declarative style and provides callbacks to make sure that your code will be executed in right animation phase.
+
+###Usage
+
+Just include [animateTransition.min.js](https://github.com/Rapid-Application-Development-JS/AnimateTransition/blob/master/src/animateTransition.min.js) and [transitions.css](https://github.com/Rapid-Application-Development-JS/AnimateTransition/blob/master/css/transitions.css)
+
+`<link rel="stylesheet" href="transitions.css"/>`
+
+`<script src="animateTransition.min.js"></script>`
+
+Want to know how it works? See formatted [development version](https://github.com/Rapid-Application-Development-JS/AnimateTransition/blob/master/src/animateTransitionSource.js) with comments.
 
 ###Methods
 
@@ -79,6 +92,12 @@ AnimateTransition({
    animation: 'popup-scale-in'
 });
 ```
+
+See live examples:
+
+[Blocks Animation](http://rapid-application-development-js.github.io/AnimateTransition/)
+
+[Popups Animation](http://rapid-application-development-js.github.io/AnimateTransition/popups.html)
 
 ##License
 

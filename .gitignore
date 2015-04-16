@@ -1,6 +1,7 @@
 !.gitignore
 .idea/
 nbproject/
+exp.txt
 
 .DS_Store
 

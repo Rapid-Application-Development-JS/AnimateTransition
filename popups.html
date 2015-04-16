@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="theme/css/main.css" type="text/css"/>
     <link rel="stylesheet" href="examples/index.css" type="text/css"/>
 
-    <script type="text/javascript" src="animateTransition.js"></script>
+    <script type="text/javascript" src="src/animateTransition.js"></script>
     <script type="text/javascript" src="examples/popups.js"></script>
 
 </head>
 <body>
 <div class="github-fork-ribbon-wrapper right">
     <div class="github-fork-ribbon">
-        <a href="https://github.com/Rapid-Application-Development-JS/AnimateTransition">Fork us on GitHub</a>
+        <a href="https://github.com/Rapid-Application-Development-JS/AnimateTransition" target="_blank">Fork us on GitHub</a>
     </div>
 </div>
 <div class="main-container">
@@ -30,8 +30,6 @@
     <div class="main main-blocks popup-main-blocks">
         <div class="animation-container">
             <div class="section__content animation-container__block first" data-block="out">
-            </div>
-            <div class="section__content animation-container__block second" data-block="in">
                 <div class="code">AnimateTransition({
     container: container,
     blockIn: popup,
@@ -44,6 +42,8 @@
     }
 });
                 </div>
+            </div>
+            <div class="section__content animation-container__block second" data-block="in">
                 <button class="topcoat-button animation-container__close">Close</button>
             </div>
         </div>
@@ -61,7 +61,7 @@
 
                 <li class="topcoat-list__item block-container__item">
                     <label class="topcoat-radio-button" for="popup-drop-in">
-                        <input type="radio" name="animation" id="popup-drop-in" checked="checked">
+                        <input type="radio" name="animation" id="popup-drop-in">
                         <div class="topcoat-radio-button__checkmark"></div>
                         Popup-drop-in
                     </label>
@@ -127,7 +127,7 @@
         </form>
         <div class="buttons-holder">
             <div class="navigation-bar__item animate-button-blocks-block">
-                <a href="blocks.html" class="topcoat-icon-button animate-button-link">
+                <a href="." class="topcoat-icon-button animate-button-link">
                     <i class="fa fa-angle-left"></i>
                     Animate Blocks
                 </a>

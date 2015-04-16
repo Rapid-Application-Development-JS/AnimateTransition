@@ -46,14 +46,14 @@
     background-color: #85A39C;
     background-repeat: no-repeat;
     background-position: 90% 90%;
-    background-image: url('../examples/img/logo_green_0.4.png');
+    background-image: url('../examples/img/logo_green.png');
 }
 
 .animation-container__block.second {
     background-color: #567d9c;
     background-repeat: no-repeat;
     background-position: 90% 90%;
-    background-image: url('../examples/img/logo_blue_0.4.png');
+    background-image: url('../examples/img/logo_blue.png');
 }
 
 .animation-container__close {
@@ -77,10 +77,11 @@
     height: 70%;
     border-radius: 8px;
     text-align: center;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
 }
 
 [data-type="popup"].animation-container__block {
-    background-image: none;
+    background-position: center;
 }
 
 
@@ -192,13 +193,11 @@
 
     .animation-container__block.first {
         background-position: 50% 50%;
-        background-image: url('../examples/img/logo_green.png');
     }
 
 
     .animation-container__block.second {
         background-position: 50% 50%;
-        background-image: url('../examples/img/logo_blue.png');
     }
 }
 
@@ -264,13 +263,11 @@
 
     .animation-container__block.first {
         background-position: 50% 50%;
-        background-image: url('../examples/img/logo_green.png');
     }
 
 
     .animation-container__block.second {
         background-position: 50% 50%;
-        background-image: url('../examples/img/logo_blue.png');
     }
 
     [data-type="popup"] {
@@ -315,4 +312,27 @@
     .animate-button-link {
         width: 90%;
     }
+
+    .github-fork-ribbon-wrapper.right .github-fork-ribbon {
+        top: 3px;
+        right: 0;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
+        border-left: 1px solid rgba(69, 70, 70, 0.85);
+        border-radius: 4px 0 0 4px;
+    }
+
+    .github-fork-ribbon a,
+    .github-fork-ribbon a:hover {
+        width: 122px;
+    }
+
+    .topcoat-navigation-bar__title {
+        text-align: left;
+        text-shadow: 0 -1px rgba(0,0,0,0.69);
+    }
+
 }
