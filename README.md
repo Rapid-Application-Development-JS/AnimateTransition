@@ -18,6 +18,7 @@ Unlike other libraries, `Animate Transition` let you not just animate one elemen
 Just include [animateTransition.min.js](https://github.com/Rapid-Application-Development-JS/AnimateTransition/blob/master/src/animateTransition.min.js) and [transitions.css](https://github.com/Rapid-Application-Development-JS/AnimateTransition/blob/master/css/transitions.css)
 
 `<link rel="stylesheet" href="transitions.css"/>`
+
 `<script src="animateTransition.min.js"></script>`
 
 Want to know how it works? See formatted [development version](https://github.com/Rapid-Application-Development-JS/AnimateTransition/blob/master/src/animateTransitionSource.js) with comments.
