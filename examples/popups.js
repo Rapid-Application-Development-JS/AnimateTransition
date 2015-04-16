@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		radios = document.getElementsByName('animation'),
 		animationTypeSpan = document.querySelectorAll('[data-animation-type]'),
 		select = document.getElementById('animation-select'),
+		mainBlock = document.querySelector('[data-block="out"]'),
 		container = '.animation-container',
 		popup = '[data-block="in"]',
 		radioButtonValue;
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			animation: animation,
 			onTransitionStart: function (blockIn, blockOut, container, event) {
 				button.setAttribute('disabled', 'disabled');
+				mainBlock.style.backgroundImage = 'none';
 			},
 			onTransitionEnd: function (blockIn, blockOut, container, event) {
 			}
@@ -39,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		var block = event.target.parentNode;
 		button.removeAttribute('disabled');
 		block.removeAttribute('data-type');
+		mainBlock.style.backgroundImage = '';
 	}
 
 	closeButton.addEventListener('click', closePopup);

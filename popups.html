@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="theme/css/main.css" type="text/css"/>
     <link rel="stylesheet" href="examples/index.css" type="text/css"/>
 
-    <script type="text/javascript" src="animateTransition.js"></script>
+    <script type="text/javascript" src="src/animateTransition.js"></script>
     <script type="text/javascript" src="examples/popups.js"></script>
 
 </head>
@@ -30,8 +30,6 @@
     <div class="main main-blocks popup-main-blocks">
         <div class="animation-container">
             <div class="section__content animation-container__block first" data-block="out">
-            </div>
-            <div class="section__content animation-container__block second" data-block="in">
                 <div class="code">AnimateTransition({
     container: container,
     blockIn: popup,
@@ -44,6 +42,8 @@
     }
 });
                 </div>
+            </div>
+            <div class="section__content animation-container__block second" data-block="in">
                 <button class="topcoat-button animation-container__close">Close</button>
             </div>
         </div>
