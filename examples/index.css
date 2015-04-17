@@ -12,16 +12,15 @@
 }
 
 .main-blocks {
-    bottom: 312px;
+    bottom: 307px;
 }
 
 .popup-main-blocks {
-    bottom: 240px;
+    bottom: 235px;
 }
 
 .animation-container {
     height: 100%;
-    overflow: hidden;
     position: relative;
     border-bottom: 1px solid #333434;
     -webkit-box-sizing: border-box;
@@ -57,11 +56,15 @@
 }
 
 .animation-container__close {
-    display: none;
     position: absolute;
-    width: 100px;
-    bottom: 10%;
-    right: 10%;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    right: 10px;
+    top: 10px;
+    background-image: url('img/ic_close.png');
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 [data-block="out"] {
@@ -145,6 +148,7 @@
 .filler {
     width: 25%;
     text-align: center;
+    height: 48px;
 }
 
 .animate-button-block {
@@ -183,12 +187,7 @@
     }
 
     .main-blocks {
-        bottom: 320px;
-    }
-
-    .animation-container__close {
-        margin-right: -50px;
-        right: 50%;
+        bottom: 315px;
     }
 
     .animation-container__block.first {
@@ -289,9 +288,11 @@
         height: 185px;
     }
 
-    .animate-button-blocks-block {
+    .animate-button-blocks-block,
+    .animate-button-popups-block {
         position: absolute;
-        bottom: 21px;
+        bottom: 16px;
+        left: 0;
     }
 
     .animation-select {

@@ -12,12 +12,7 @@
   'use strict';
   var animateTransition;
 
-  /**
-   * Animate Transition
-   * @constructor
-   * @version 1.0.0
-   */
-  function AnimateTransition() {
+    function AnimateTransition() {
     var prefixes = ['webkit', 'moz', 'MS', 'o', ''], overlay = document.createElement('div');
     overlay.className = 'transition-overlay';
     function showOverlay() {
@@ -54,17 +49,14 @@
         element.removeEventListener(prefixes[i] + eventName, callback, false);
       }
     }
-
     function hasClass(obj, className) {
       return (obj.className ? obj.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)')) : false);
     }
-
     function addClass(obj, className) {
       if (obj && !hasClass(obj, className)) {
-        obj.className += ' ' + className;
+        obj.className += " " + className;
       }
     }
-
     function removeClass(obj, className) {
       if (obj && hasClass(obj, className)) {
         obj.className = obj.className.replace(new RegExp('(\\s|^)' + className + '(?=\\s|$)'), '');
@@ -75,10 +67,10 @@
       return {
         type: 'fake',
         animationName: name || 'none',
-        stopPropagation: new Function
+        stopPropagation: function () {
+        }
       }
     }
-
     function blocksTransition(options) {
       var container,
         blockIn,
@@ -90,16 +82,21 @@
         beforeTransition,
         onTransitionStart,
         onTransitionEnd,
+        isOverlay,
         timer,
-        timeOut = 35000;
+        timeOut = 3500;
       options = options || {};
       container = getElement(options.container) || document.body;
       blockIn = getElement(options.blockIn);
       blockOut = getElement(options.blockOut);
       animationName = options.animation || 'none';
-      beforeTransition = options.beforeTransition || new Function;
-      onTransitionStart = options.onTransitionStart || new Function;
-      onTransitionEnd = options.onTransitionEnd || new Function;
+      isOverlay = options.showOverlay || null;
+      beforeTransition = options.beforeTransition || function () {
+      };
+      onTransitionStart = options.onTransitionStart || function () {
+      };
+      onTransitionEnd = options.onTransitionEnd || function () {
+      };
       blockInClassName = animationName + '-transition-view-to-show';
       blockOutClassName = animationName + '-transition-view-to-hide';
       transitionTypeName = 'transition-' + animationName;
@@ -128,11 +125,11 @@
       }
 
       addPrefixedEvent(container, 'AnimationStart', onAnimationStart);
-      function onAnimationEnd(event) {
-        if (event.animationName !== animationName) {
+      function onAnimationEnd(e) {
+        if (e.animationName !== animationName) {
           return;
         }
-        event.stopPropagation();
+        e.stopPropagation();
         if (blockIn) {
           blockIn.busy = false;
         }
@@ -143,13 +140,15 @@
           }
           removeClass(blockOut, blockOutClassName);
         }
-        onTransitionEnd(blockIn, blockOut, container, event);
+        onTransitionEnd(blockIn, blockOut, container, e);
         removeClass(container, transitionTypeName);
         removeClass(blockIn, blockInClassName);
         if (timer) {
           clearTimeout(timer);
         }
-        hideOverlay();
+        if (isOverlay) {
+          hideOverlay();
+        }
         removePrefixedEvent(container, 'AnimationEnd', onAnimationEnd);
       }
 
@@ -181,13 +180,14 @@
         addClass(blockOut, blockOutClassName);
         blockOut.offsetHeight;
       }
-      showOverlay();
+      if (isOverlay) {
+        showOverlay();
+      }
       timer = window.setTimeout(function () {
         onAnimationEnd(getFakeEventObj(animationName));
       }, timeOut);
       addClass(container, transitionTypeName);
     }
-
     return blocksTransition;
   }
 

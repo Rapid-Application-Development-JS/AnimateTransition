@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			blockIn: blockIn,
 			blockOut: blockOut,
 			animation: animation,
+			showOverlay: true,
 			onTransitionStart: function (blockIn, blockOut, container, event) {
 				button.setAttribute('disabled', 'disabled');
 			},

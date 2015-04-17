@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="theme/css/main.css" type="text/css"/>
     <link rel="stylesheet" href="examples/index.css" type="text/css"/>
 
-    <script type="text/javascript" src="src/animateTransition.js"></script>
+    <script type="text/javascript" src="src/animateTransition.min.js"></script>
     <script type="text/javascript" src="examples/popups.js"></script>
 
 </head>
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="section__content animation-container__block second" data-block="in">
-                <button class="topcoat-button animation-container__close">Close</button>
+                <button class="topcoat-button animation-container__close"></button>
             </div>
         </div>
     </div>
@@ -64,6 +64,14 @@
                         <input type="radio" name="animation" id="popup-drop-in">
                         <div class="topcoat-radio-button__checkmark"></div>
                         Popup-drop-in
+                    </label>
+                </li>
+
+                <li class="topcoat-list__item block-container__item">
+                    <label class="topcoat-radio-button" for="popup-revolution-in">
+                        <input type="radio" name="animation" id="popup-revolution-in">
+                        <div class="topcoat-radio-button__checkmark"></div>
+                        Popup-revolution-in
                     </label>
                 </li>
 
@@ -90,18 +98,12 @@
                         Cover-double-in
                     </label>
                 </li>
+
                 <li class="topcoat-list__item block-container__item">
                     <label class="topcoat-radio-button" for="cover-double-out">
                         <input type="radio" name="animation" id="cover-double-out">
                         <div class="topcoat-radio-button__checkmark"></div>
                         Cover-double-out
-                    </label>
-                </li>
-                <li class="topcoat-list__item block-container__item">
-                    <label class="topcoat-radio-button" for="revolution-in">
-                        <input type="radio" name="animation" id="revolution-in">
-                        <div class="topcoat-radio-button__checkmark"></div>
-                        Revolution-in
                     </label>
                 </li>
 
@@ -117,11 +119,11 @@
             <select class="topcoat-select animation-select" id="animation-select">
                 <option value="popup-scale-in">Popup-scale-in</option>
                 <option value="popup-drop-in">Popup-drop-in</option>
+                <option value="popup-revolution-in">Popup-revolution-in</option>
                 <option value="fade-in">Fade-in</option>
                 <option value="cover-in">Cover-in</option>
                 <option value="cover-double-in">Cover-double-in</option>
                 <option value="cover-double-out">Cover-double-out</option>
-                <option value="revolution-in">Revolution-in</option>
                 <option value="bounce-in">Bounce-in</option>
             </select>
         </form>
