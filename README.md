@@ -62,7 +62,7 @@ At least one parameter ( **blockIn** or **blockOut** ) must be specified.
 	- `revolution-out`
 	- `bounce-in`
 
-To create custom animation with _`animation_name`_, you need to describe following css classes - `.transition-`_`animation_name`_ for container animation, `._animation_name_-transition-view-to-show` for blockIn and `_animation_name_-transition-view-to-hide` for blockOut animation.
+To create custom animation with `animation_name`, you need to describe following css classes - .transition-`animation_name` for container animation, .`animation_name`-transition-view-to-show for blockIn and .`animation_name`-transition-view-to-hide for blockOut animation.
 
 * `beforeTransition(blockIn, blockOut, container)` - function that will be performed before the transition; if it is set to **false**, the animation will not be performed.
 * `onTransitionStart(blockIn, blockOut, container, e)` - function that will be performed at the start of the transition, where **е** is the event object.
