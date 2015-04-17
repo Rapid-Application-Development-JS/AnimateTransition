@@ -21,7 +21,7 @@ Just include [animateTransition.min.js](https://github.com/Rapid-Application-Dev
 
 `<script src="animateTransition.min.js"></script>`
 
-Want to know how it works? See formatted [development version](https://github.com/Rapid-Application-Development-JS/AnimateTransition/blob/master/src/animateTransitionSource.js) with comments.
+Want to know how it works? See formatted [development version](https://github.com/Rapid-Application-Development-JS/AnimateTransition/blob/master/src/animateTransition.source.js) with comments.
 
 ###Methods
 
@@ -36,6 +36,7 @@ Takes the object **options** as the parameter. The object has the following prop
 * **blockOut** - block, from which the transition is carried out. If it is not defined, by **blockIn** the block with the selected animation will appear.
 At least one parameter ( **blockIn** or **blockOut** ) must be specified.
 **container**, **blockIn**, **blockOut** can be both css selectors or already existing DOM Elements.
+* **showOverlay** - optional overlay. If the property is not defined or set to false, overlay won't be shown. Overlay has default class `.transition-overlay` (See [transitions.css](https://github.com/Rapid-Application-Development-JS/AnimateTransition/blob/master/css/transitions.css))
 * **animation** - animation name. Currently the following blocks animations are supported by default:
 	- `slide-in`
 	- `slide-out`
@@ -61,7 +62,7 @@ At least one parameter ( **blockIn** or **blockOut** ) must be specified.
 	- `revolution-out`
 	- `bounce-in`
 
-To create custom animation with _animation_name_, you need to describe following css classes - '.transition-_animation_name_' for container animation, '._animation_name_-transition-view-to-show' for blockIn and '_animation_name_-transition-view-to-hide' for blockOut animation. 
+To create custom animation with _`animation_name`_, you need to describe following css classes - `.transition-`_`animation_name`_ for container animation, `._animation_name_-transition-view-to-show` for blockIn and `_animation_name_-transition-view-to-hide` for blockOut animation.
 
 * `beforeTransition(blockIn, blockOut, container)` - function that will be performed before the transition; if it is set to **false**, the animation will not be performed.
 * `onTransitionStart(blockIn, blockOut, container, e)` - function that will be performed at the start of the transition, where **е** is the event object.

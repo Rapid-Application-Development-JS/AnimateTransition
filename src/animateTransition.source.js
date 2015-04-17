@@ -14,12 +14,11 @@
 
   /**
    * Animate Transition
-   * @constructor
-   * @version 1.0.0
    */
   function AnimateTransition() {
     var prefixes = ['webkit', 'moz', 'MS', 'o', ''], overlay = document.createElement('div');
     overlay.className = 'transition-overlay';
+    // Utils
     function showOverlay() {
       document.body.appendChild(overlay);
     }
@@ -55,16 +54,19 @@
       }
     }
 
+    // @todo replaced 'cname' by 'className'
     function hasClass(obj, className) {
       return (obj.className ? obj.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)')) : false);
     }
 
+    // @todo replaced 'cname' by 'className'
     function addClass(obj, className) {
       if (obj && !hasClass(obj, className)) {
-        obj.className += ' ' + className;
+        obj.className += " " + className;
       }
     }
 
+    // @todo replaced 'cname' by 'className'
     function removeClass(obj, className) {
       if (obj && hasClass(obj, className)) {
         obj.className = obj.className.replace(new RegExp('(\\s|^)' + className + '(?=\\s|$)'), '');
@@ -75,10 +77,13 @@
       return {
         type: 'fake',
         animationName: name || 'none',
-        stopPropagation: new Function
+        stopPropagation: function () {
+        }
       }
     }
 
+    // @todo replaced 'pages' by 'blocks'
+    // @todo we can use it no only for pages
     function blocksTransition(options) {
       var container,
         blockIn,
@@ -90,35 +95,50 @@
         beforeTransition,
         onTransitionStart,
         onTransitionEnd,
+        isOverlay,
         timer,
-        timeOut = 35000;
+        timeOut = 3500;
+      // initialize options
       options = options || {};
       container = getElement(options.container) || document.body;
       blockIn = getElement(options.blockIn);
       blockOut = getElement(options.blockOut);
       animationName = options.animation || 'none';
-      beforeTransition = options.beforeTransition || new Function;
-      onTransitionStart = options.onTransitionStart || new Function;
-      onTransitionEnd = options.onTransitionEnd || new Function;
+      // @todo optional overlay
+      isOverlay = options.showOverlay || null;
+      beforeTransition = options.beforeTransition || function () {
+      };
+      onTransitionStart = options.onTransitionStart || function () {
+      };
+      onTransitionEnd = options.onTransitionEnd || function () {
+      };
       blockInClassName = animationName + '-transition-view-to-show';
       blockOutClassName = animationName + '-transition-view-to-hide';
       transitionTypeName = 'transition-' + animationName;
+      // @todo added verification of the absence of all blocks
       if (!blockIn && !blockOut) {
         console.log('Blocks are not defined');
         return;
       }
       if (blockIn === blockOut) {
+        // @todo added error log
         console.log('You are trying to animate same element');
         return;
       }
+      // Stop animation if any still in animation process
       if ((blockIn && blockIn.busy) || (blockOut && blockOut.busy)) {
         console.log('You try apply new animation cannot be applied to the same element until previous animation is not finished.');
+        // @todo added return; need to check
         return;
       }
+      // You can use beforeTransition callback to define extra logic.
+      // If result of the callback will be false then transition will be aborted.
       if (beforeTransition && beforeTransition(blockIn, blockOut, container) === false) {
+        // @todo added error log
         console.log('Result of the beforeTransition callback is false');
         return;
       }
+      // Init onAnimationStart event handler
       function onAnimationStart(e) {
         if (e.animationName !== animationName) {
           return;
@@ -128,11 +148,12 @@
       }
 
       addPrefixedEvent(container, 'AnimationStart', onAnimationStart);
-      function onAnimationEnd(event) {
-        if (event.animationName !== animationName) {
+      // Init onAnimationEnd event handler
+      function onAnimationEnd(e) {
+        if (e.animationName !== animationName) {
           return;
         }
-        event.stopPropagation();
+        e.stopPropagation();
         if (blockIn) {
           blockIn.busy = false;
         }
@@ -141,19 +162,25 @@
           if (blockOut.parentNode === container) {
             container.removeChild(blockOut);
           }
+          // @todo is needed to add else or wrap in try/catch?
           removeClass(blockOut, blockOutClassName);
         }
-        onTransitionEnd(blockIn, blockOut, container, event);
+        onTransitionEnd(blockIn, blockOut, container, e);
         removeClass(container, transitionTypeName);
         removeClass(blockIn, blockInClassName);
         if (timer) {
           clearTimeout(timer);
         }
-        hideOverlay();
+
+        // @todo optional overlay
+        if (isOverlay) {
+          hideOverlay();
+        }
         removePrefixedEvent(container, 'AnimationEnd', onAnimationEnd);
       }
 
       addPrefixedEvent(container, 'AnimationEnd', onAnimationEnd);
+      // If animation was not set - show new block without transition
       if (animationName === 'none') {
         if (blockIn) {
           container.appendChild(blockIn);
@@ -171,23 +198,36 @@
         }
         return;
       }
+      // Init transition:
+      // ----------------------
+      // Prepare for new transition.
       if (blockIn) {
         blockIn.busy = true;
         addClass(blockIn, blockInClassName);
         container.appendChild(blockIn);
+        // we don't need blockOut.offsetHeight; because we add it with css class
       }
       if (blockOut) {
         blockOut.busy = true;
         addClass(blockOut, blockOutClassName);
+        // @todo replaced comment
+        // force WebKit to redraw/repaint without propagation
         blockOut.offsetHeight;
       }
-      showOverlay();
+      // Enable overlay layer to protect from accidental clicks until animation ends
+      // @todo optional overlay
+      if (isOverlay) {
+        showOverlay();
+      }
+      // Set timeout for case if onAnimationEnd event will not occur
       timer = window.setTimeout(function () {
         onAnimationEnd(getFakeEventObj(animationName));
       }, timeOut);
+      // Add predefined CSS class to start CSS animation
       addClass(container, transitionTypeName);
     }
 
+    // @todo replaced 'pages' by 'blocks'
     return blocksTransition;
   }
 
