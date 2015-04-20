@@ -145,10 +145,22 @@
 
 .animate-button-popups-block,
 .animate-button-blocks-block,
-.filler {
+.overlay-button {
     width: 25%;
     text-align: center;
     height: 48px;
+}
+
+.overlay-button:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.overlay-button label {
+    text-align: left;
+    vertical-align: middle;
 }
 
 .animate-button-block {
@@ -216,22 +228,20 @@
         top: 2.5rem;
     }
 
-    .filler {
-       display: none;
-    }
-
     .form-options {
         text-align: center;
     }
 
     .animate-button-popups-block,
-    .animate-button-blocks-block {
-        width: 50%;
+    .animate-button-blocks-block,
+    .overlay-button,
+    .animate-button-block {
+        width: 33%;
     }
 
     .blocks-bottom button.animate-slide,
     .animate-button-link {
-        width: 70%;
+        width: 95%;
     }
 
     .animation-list {
@@ -240,7 +250,7 @@
 
     .animation-select {
         display: inline-block;
-        width: 85%;
+        width: 98%;
     }
 
     .main-blocks {
@@ -299,17 +309,25 @@
         width: 90%;
     }
 
-    .animate-button-block,
+
     .animate-button-popups-block,
     .animate-button-blocks-block {
         width: 100%;
+    }
+
+    .animate-button-block,
+    .overlay-button {
+        width: 50%;
     }
 
     .animate-button-block {
         margin-bottom: 8px;
     }
 
-    .blocks-bottom button.animate-slide,
+    .blocks-bottom button.animate-slide {
+        width: 80%;
+    }
+
     .animate-button-link {
         width: 90%;
     }

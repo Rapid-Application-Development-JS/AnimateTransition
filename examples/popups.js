@@ -7,10 +7,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		mainBlock = document.querySelector('[data-block="out"]'),
 		container = '.animation-container',
 		popup = '[data-block="in"]',
+		animation,
+		showOverlay,
 		radioButtonValue;
 
 	function animateBlocks(event) {
-		var animation;
+		showOverlay = document.getElementById('is_overlay').checked;
+
 		if (getComputedStyle(document.getElementById('animation-list')).display !== 'none') {
 			animation = document.querySelector('input[type=radio]:checked').getAttribute('id');
 		} else {
@@ -23,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			container: container,
 			blockIn: popup,
 			animation: animation,
+			showOverlay: showOverlay,
 			onTransitionStart: function (blockIn, blockOut, container, event) {
 				button.setAttribute('disabled', 'disabled');
 				mainBlock.style.backgroundImage = 'none';
@@ -38,10 +42,23 @@ document.addEventListener('DOMContentLoaded', function (event) {
 	 * @param {Event} event
 	 */
 	function closePopup(event) {
-		var block = event.target.parentNode;
-		button.removeAttribute('disabled');
-		block.removeAttribute('data-type');
-		mainBlock.style.backgroundImage = '';
+		animation =	animation.replace(/-in([^-in]*)$/, '-out$1');
+		showOverlay = document.getElementById('is_overlay').checked;
+
+		AnimateTransition({
+			container: container,
+			blockOut: popup,
+			animation: animation,
+			showOverlay: showOverlay,
+			onTransitionEnd: function (blockIn, blockOut, container, event) {
+				container.appendChild(blockOut);
+				button.removeAttribute('disabled');
+				blockOut.removeAttribute('data-type');
+				mainBlock.style.backgroundImage = '';
+			}
+		});
+
+
 	}
 
 	closeButton.addEventListener('click', closePopup);

@@ -51,16 +51,27 @@ At least one parameter ( **blockIn** or **blockOut** ) must be specified.
 	- `bounce-in`
 	- `bounce-out`
 
-	As for popups you can choose from 8 animations:
+	As for showing popups you can choose from 8 animations:
 
 	- `popup-scale-in`
-	- `fade-in`
+	- `popup-drop-in`
+	- `popup-revolution-in`
+	- `popup-fade-in`
 	- `cover-in`
-	- `cover-double-in`
-	- `cover-double-out`
-	- `revolution-in`
-	- `revolution-out`
+	- `cover-left-in`
+	- `cover-right-in`
 	- `bounce-in`
+
+	To hide popup just replace `-in` by `-out`
+
+	- `popup-scale-out`
+	- `popup-drop-out`
+	- `popup-revolution-out`
+	- `popup-fade-out`
+	- `cover-out`
+	- `cover-left-out`
+	- `cover-right-out`
+	- `bounce-out`
 
 To create custom animation with `animation_name`, you need to describe following css classes - .transition-`animation_name` for container animation, .`animation_name`-transition-view-to-show for blockIn and .`animation_name`-transition-view-to-hide for blockOut animation.
 
@@ -76,6 +87,8 @@ Properties **animation**, **beforeTransition**, **onTransitionStart** and **onTr
 
 
 To navigate between two blocks:
+
+
 ```javascript
 AnimateTransition({
    container: '.container',
@@ -85,12 +98,27 @@ AnimateTransition({
 });
 ```
 
+
 To show popup:
+
+
 ```javascript
 AnimateTransition({
    container: '.container',
    blockIn: '.popup',
    animation: 'popup-scale-in'
+});
+```
+
+
+To hide popup:
+
+
+```javascript
+AnimateTransition({
+   container: '.container',
+   blockOut: '.popup',
+   animation: 'popup-scale-out'
 });
 ```
 

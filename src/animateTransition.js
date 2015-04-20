@@ -84,7 +84,7 @@
         onTransitionEnd,
         isOverlay,
         timer,
-        timeOut = 3500;
+        timeOut = 35000;
       options = options || {};
       container = getElement(options.container) || document.body;
       blockIn = getElement(options.blockIn);
