@@ -1353,11 +1353,11 @@ div[data-role="modal-view"] {
 
 
 .transition-popup-scale-out {
-    -webkit-animation: opacity-out 200ms 1 ease;
-    -moz-animation: opacity-out 200ms 1 ease;
-    -ms-animation: opacity-out 200ms 1 ease;
-    -o-animation: opacity-out 200ms 1 ease;
-    animation: opacity-out 200ms 1 ease;
+    -webkit-animation: opacity-out 2000ms 1 ease;
+    -moz-animation: opacity-out 2000ms 1 ease;
+    -ms-animation: opacity-out 2000ms 1 ease;
+    -o-animation: opacity-out 2000ms 1 ease;
+    animation: opacity-out 2000ms 1 ease;
 }
 
 .transition-popup-scale-out .popup-scale-out-transition-view-to-hide {
@@ -1611,7 +1611,7 @@ div[data-role="modal-view"] {
 }
 
 
-/* Transition popup revolution - (in)
+/* Transition PopUp Revolution - (in)
 -----------------------------------------------------------------------------*/
 
 @-webkit-keyframes popup-revolution-in {
@@ -1637,11 +1637,11 @@ div[data-role="modal-view"] {
 
 .transition-popup-revolution-in .popup-revolution-in-transition-view-to-show {
     display: block;
-    -webkit-animation: popup-revolution-in 400ms 1 cubic-bezier(0.5, 0.1, 0.5, 1.0);
-    -moz-animation: popup-revolution-in 400ms 1 cubic-bezier(0.5, 0.1, 0.5, 1.0);
-    -ms-animation: popup-revolution-in 400ms 1 cubic-bezier(0.5, 0.1, 0.5, 1.0);
-    -o-animation: popup-revolution-in 400ms 1 cubic-bezier(0.5, 0.1, 0.5, 1.0);
-    animation: popup-revolution-in 400ms 1 cubic-bezier(0.5, 0.1, 0.5, 1.0);
+    -webkit-animation: popup-revolution-in 200ms 1 cubic-bezier(0.5, 0.1, 0.5, 1.0);
+    -moz-animation: popup-revolution-in 200ms 1 cubic-bezier(0.5, 0.1, 0.5, 1.0);
+    -ms-animation: popup-revolution-in 200ms 1 cubic-bezier(0.5, 0.1, 0.5, 1.0);
+    -o-animation: popup-revolution-in 200ms 1 cubic-bezier(0.5, 0.1, 0.5, 1.0);
+    animation: popup-revolution-in 200ms 1 cubic-bezier(0.5, 0.1, 0.5, 1.0);
 
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
@@ -1658,4 +1658,66 @@ div[data-role="modal-view"] {
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     backface-visibility: hidden;
+}
+
+/* Transition PopUp Revolution - (out)
+-----------------------------------------------------------------------------*/
+
+@-webkit-keyframes popup-revolution-out {
+    from { opacity:0.999; }
+    to   { opacity:0.998; }
+}
+@-moz-keyframes popup-revolution-out {
+    from { opacity:0.999; }
+    to   { opacity:0.998; }
+}
+@-ms-keyframes popup-revolution-out {
+    from { opacity:0.999; }
+    to   { opacity:0.998; }
+}
+@-o-keyframes popup-revolution-out {
+    from { opacity:0.999; }
+    to   { opacity:0.998; }
+}
+@keyframes popup-revolution-out {
+    from { opacity:0.999; }
+    to   { opacity:0.998; }
+}
+
+@-webkit-keyframes view-revolution-out {
+    from { -webkit-transform: rotateY(0deg); }
+    to   { -webkit-transform: rotateY(90deg); }
+}
+@-moz-keyframes view-revolution-out {
+    from { -moz-transform: rotateY(0deg); }
+    to   { -moz-transform: rotateY(90deg); }
+}
+@-ms-keyframes view-revolution-out {
+    from { -ms-transform: rotateY(0deg); }
+    to   { -ms-transform: rotateY(90deg); }
+}
+@-o-keyframes view-revolution-out {
+    from { -o-transform: rotateY(0deg); }
+    to   { -o-transform: rotateY(90deg); }
+}
+@keyframes view-revolution-out {
+    from { transform: rotateY(0deg); }
+    to   { transform: rotateY(90deg); }
+}
+
+.transition-popup-revolution-out {
+    -webkit-animation: popup-revolution-out 200ms 1 ease 50ms;
+    -moz-animation: popup-revolution-out 200ms 1 ease 50ms;
+    -ms-animation: popup-revolution-out 200ms 1 ease 50ms;
+    -o-animation: popup-revolution-out 200ms 1 ease 50ms;
+    animation: popup-revolution-out 200ms 1 ease 50ms;
+}
+
+
+.transition-popup-revolution-out .popup-revolution-out-transition-view-to-hide {
+    -webkit-animation: view-revolution-out 250ms 1 ease;
+    -moz-animation: view-revolution-out 250ms 1 ease;
+    -ms-animation: view-revolution-out 250ms 1 ease;
+    -o-animation: view-revolution-out 250ms 1 ease;
+    animation: view-revolution-out 250ms 1 ease;
 }
