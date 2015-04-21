@@ -23,6 +23,14 @@ See live examples:
 - In order to prevent interaction with the UI during the transition the whole viewport is covered by the overlay.
 - You can create & use your own custom transition animation.
 
+>Is it better than the pure-CSS approach?
+
+>Actually it is the pure-CSS approach in itself - but there is a helper for convenience, which has callbacks in all browsers; animation presets are optimized and work properly; and you write your pure-CSS animation and use it with the helper.
+
+>When there are more then two dozen types of browsers on Android only (let alone adding desktops, iOS, and Windows Phone), very often it becomes a real pain without a helper and optimized CSS.
+
+
+
 ###Usage
 
 Just include [animateTransition.min.js](https://github.com/Rapid-Application-Development-JS/AnimateTransition/blob/master/src/animateTransition.min.js) and [transitions.css](https://github.com/Rapid-Application-Development-JS/AnimateTransition/blob/master/css/transitions.css)
