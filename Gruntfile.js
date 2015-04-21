@@ -30,21 +30,12 @@ module.exports = function (grunt) {
                     }
                 ]
             }
-        },
-        clean: {
-            dev: {
-                files: [
-                    {src: ['src/<%= pkg.name %>.js', 'src/<%= pkg.name %>.min.js', 'src/<%= pkg.name %>.source.js']}
-                ]
-            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-stripcomments');
 
-    grunt.registerTask('dev', ['clean:dev']);
     grunt.registerTask('release', ['copy:build', 'comments:build', 'uglify:build']);
 };

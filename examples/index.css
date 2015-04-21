@@ -19,6 +19,17 @@
     bottom: 235px;
 }
 
+.custom-overlay {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
 .animation-container {
     height: 100%;
     position: relative;
@@ -72,7 +83,7 @@
 }
 
 [data-type="popup"] {
-    z-index: 10;
+    z-index: 101;
     top: 15%;
     left: 50%;
     margin-left: -360px;
@@ -98,16 +109,14 @@
 }
 
 .blocks-bottom button {
-    width: 25%;
     margin: 0 auto;
 }
 
-.blocks-bottom button.animate-slide {
+.animate-slide.topcoat-button--cta {
     width: 50%;
 }
 
-.blocks-holder,
-.popups-holder {
+.form-options {
     font-size: 0;
 }
 
@@ -145,7 +154,8 @@
 
 .animate-button-popups-block,
 .animate-button-blocks-block,
-.overlay-button {
+.overlay-button,
+.filler {
     width: 25%;
     text-align: center;
     height: 48px;
@@ -239,9 +249,14 @@
         width: 33%;
     }
 
-    .blocks-bottom button.animate-slide,
+    .animate-slide.topcoat-button--cta,
     .animate-button-link {
         width: 95%;
+    }
+
+    .blocks-holder .animate-button-block,
+    .blocks-holder .animate-button-popups-block {
+        width: 50%;
     }
 
     .animation-list {
@@ -263,6 +278,10 @@
 
     .buttons-holder {
         margin: 8px 0;
+        text-align: center;
+    }
+    .filler {
+        display: none;
     }
 
     .form-options {
@@ -295,7 +314,7 @@
     }
 
     .blocks-bottom {
-        height: 185px;
+        height: 178px;
     }
 
     .animate-button-blocks-block,
@@ -324,12 +343,18 @@
         margin-bottom: 8px;
     }
 
-    .blocks-bottom button.animate-slide {
+    .popups-holder .animate-slide {
         width: 80%;
     }
 
-    .animate-button-link {
+    .animate-button-link,
+    .blocks-bottom.blocks-holder .animate-slide {
         width: 90%;
+    }
+
+    .blocks-holder .animate-button-block,
+    .blocks-holder .animate-button-popups-block {
+        width: 100%;
     }
 
     .github-fork-ribbon-wrapper.right .github-fork-ribbon {
