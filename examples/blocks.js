@@ -7,11 +7,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		select = document.getElementById('animation-select'),
 		animationTypeSpan = document.querySelectorAll('[data-animation-type]'),
 		radioButtonValue,
-		showOverlay,
 		animation;
 
 	function animateBlocks(event) {
-		showOverlay = document.getElementById('is_overlay').checked;
 
 		if (getComputedStyle(document.getElementById('animation-list')).display !== 'none') {
 			animation = document.querySelector('input[type=radio]:checked').getAttribute('id');
@@ -25,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			blockIn: blockIn,
 			blockOut: blockOut,
 			animation: animation,
-			showOverlay: showOverlay,
 			onTransitionStart: function (blockIn, blockOut, container, event) {
 				button.setAttribute('disabled', 'disabled');
 			},

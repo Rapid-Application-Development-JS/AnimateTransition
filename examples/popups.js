@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		animationTypeSpan = document.querySelectorAll('[data-animation-type]'),
 		select = document.getElementById('animation-select'),
 		mainBlock = document.querySelector('[data-block="out"]'),
+		customOverlay = document.querySelector('.custom-overlay'),
 		container = '.animation-container',
 		popup = '[data-block="in"]',
 		animation,
@@ -26,10 +27,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			container: container,
 			blockIn: popup,
 			animation: animation,
-			showOverlay: showOverlay,
 			onTransitionStart: function (blockIn, blockOut, container, event) {
 				button.setAttribute('disabled', 'disabled');
 				mainBlock.style.backgroundImage = 'none';
+
+				if (showOverlay) {
+					customOverlay.style.display = 'block';
+				}
 			},
 			onTransitionEnd: function (blockIn, blockOut, container, event) {
 			}
@@ -55,6 +59,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
 				button.removeAttribute('disabled');
 				blockOut.removeAttribute('data-type');
 				mainBlock.style.backgroundImage = '';
+				if (showOverlay) {
+					customOverlay.style.display = 'none';
+				}
 			}
 		});
 

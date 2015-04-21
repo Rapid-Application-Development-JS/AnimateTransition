@@ -95,7 +95,6 @@
         beforeTransition,
         onTransitionStart,
         onTransitionEnd,
-        isOverlay,
         timer,
         timeOut = 3500;
       // initialize options
@@ -104,8 +103,6 @@
       blockIn = getElement(options.blockIn);
       blockOut = getElement(options.blockOut);
       animationName = options.animation || 'none';
-      // @todo optional overlay
-      isOverlay = options.showOverlay || null;
       beforeTransition = options.beforeTransition || function () {
       };
       onTransitionStart = options.onTransitionStart || function () {
@@ -172,10 +169,7 @@
           clearTimeout(timer);
         }
 
-        // @todo optional overlay
-        if (isOverlay) {
-          hideOverlay();
-        }
+        hideOverlay();
         removePrefixedEvent(container, 'AnimationEnd', onAnimationEnd);
       }
 
@@ -215,10 +209,7 @@
         blockOut.offsetHeight;
       }
       // Enable overlay layer to protect from accidental clicks until animation ends
-      // @todo optional overlay
-      if (isOverlay) {
-        showOverlay();
-      }
+      showOverlay();
       // Set timeout for case if onAnimationEnd event will not occur
       timer = window.setTimeout(function () {
         onAnimationEnd(getFakeEventObj(animationName));

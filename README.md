@@ -57,7 +57,6 @@ Takes the object **options** as the parameter. The object has the following prop
 * **blockOut** - block, from which the transition is carried out. If it is not defined, by **blockIn** the block with the selected animation will appear.
 At least one parameter ( **blockIn** or **blockOut** ) must be specified.
 **container**, **blockIn**, **blockOut** can be both css selectors or already existing DOM Elements.
-* **showOverlay** - optional overlay. If the property is not defined or set to false, overlay won't be shown. Overlay has default class `.transition-overlay` (See [transitions.css](https://github.com/Rapid-Application-Development-JS/AnimateTransition/blob/master/css/transitions.css))
 * **animation** - animation name. Currently the following blocks animations are supported by default:
 	- `slide-in`
 	- `slide-out`
