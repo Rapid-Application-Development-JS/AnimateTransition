@@ -3,7 +3,15 @@ Animate Transition
 
 Library for transition animations between blocks (pages) in the application.
 
-`Animate Transition` allows you to easily make transition between any two HTML elements. It can be used in different variety of situations, whatever you want to enhance appearance of your web site or navigate between pages in hybrid mobile application.
+See live examples:
+
+[Blocks Animation](http://rapid-application-development-js.github.io/AnimateTransition/)
+
+[Popups Animation](http://rapid-application-development-js.github.io/AnimateTransition/popups.html)
+
+---
+
+`Animate Transition` allows you to easily make transition between any two (or more, *it all depends on you* ) HTML elements. It can be used in different variety of situations, whatever you want to enhance appearance of your web site or navigate between pages in hybrid mobile application.
 
 `Animate Transition` provides great performance due to using hardware accelerated CSS transitions. You can choose from 12 preset animation types for blocks, 8 animation types for popups or create your own CSS animation.
 
@@ -11,7 +19,9 @@ Library for transition animations between blocks (pages) in the application.
 
 ###Advantages
 
-Unlike other libraries, `Animate Transition` let you not just animate one element, but made a transition between two in a way you like. It also has declarative style and provides callbacks to make sure that your code will be executed in right animation phase.
+- Unlike other libraries, `Animate Transition` let you not just animate one element, but made a transition between two in a way you like. It also has declarative style and provides callbacks to make sure that your code will be executed in right animation phase.
+- In order to prevent interaction with the UI during the transition the whole viewport is covered by the overlay.
+- You can create & use your own custom transition animation.
 
 ###Usage
 
@@ -22,6 +32,9 @@ Just include [animateTransition.min.js](https://github.com/Rapid-Application-Dev
 `<script src="animateTransition.min.js"></script>`
 
 Want to know how it works? See formatted [development version](https://github.com/Rapid-Application-Development-JS/AnimateTransition/blob/master/src/animateTransition.source.js) with comments.
+
+###Dependence
+Nope $)
 
 ###Methods
 
@@ -121,12 +134,6 @@ AnimateTransition({
    animation: 'popup-scale-out'
 });
 ```
-
-See live examples:
-
-[Blocks Animation](http://rapid-application-development-js.github.io/AnimateTransition/)
-
-[Popups Animation](http://rapid-application-development-js.github.io/AnimateTransition/popups.html)
 
 ##License
 
