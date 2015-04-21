@@ -82,15 +82,13 @@
         beforeTransition,
         onTransitionStart,
         onTransitionEnd,
-        isOverlay,
         timer,
-        timeOut = 35000;
+        timeOut = 3500;
       options = options || {};
       container = getElement(options.container) || document.body;
       blockIn = getElement(options.blockIn);
       blockOut = getElement(options.blockOut);
       animationName = options.animation || 'none';
-      isOverlay = options.showOverlay || null;
       beforeTransition = options.beforeTransition || function () {
       };
       onTransitionStart = options.onTransitionStart || function () {
@@ -146,9 +144,8 @@
         if (timer) {
           clearTimeout(timer);
         }
-        if (isOverlay) {
-          hideOverlay();
-        }
+
+        hideOverlay();
         removePrefixedEvent(container, 'AnimationEnd', onAnimationEnd);
       }
 
@@ -180,9 +177,7 @@
         addClass(blockOut, blockOutClassName);
         blockOut.offsetHeight;
       }
-      if (isOverlay) {
-        showOverlay();
-      }
+      showOverlay();
       timer = window.setTimeout(function () {
         onAnimationEnd(getFakeEventObj(animationName));
       }, timeOut);
