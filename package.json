@@ -1,40 +1,50 @@
 {
-  "name": "animateTransition",
-  "version": "0.0.1",
+  "authors": [
+    "Yuriy Luchaninov <y.luchaninov@mobidev.biz> (http://mobidev.biz/)"
+  ],
+  "bugs": {
+    "url": "https://github.com/Rapid-Application-Development-JS/AnimateTransition/issues"
+  },
+  "contributors": [
+    {
+      "email": "y.luchaninov@mobidev.biz",
+      "name": "Yuriy Luchaninov"
+    },
+    {
+      "email": "t.sakharova@mobidev.biz",
+      "name": "Tatyana Sakharova"
+    }
+  ],
+  "dependencies": {},
   "description": "Library for transition animations between blocks (pages) in the application",
-  "main": "animateTransition.js",
+  "devDependencies": {
+    "grunt": "~0.4.*",
+    "grunt-cli": "~0.1.*",
+    "grunt-contrib-clean": "^0.5.*",
+    "grunt-contrib-concat": "^0.4.*",
+    "grunt-contrib-copy": "~0.5.*",
+    "grunt-contrib-uglify": "~0.2.*",
+    "grunt-pure-cjs": "^1.4.*",
+    "grunt-stripcomments": "^0.3.*"
+  },
+  "homepage": "https://github.com/Rapid-Application-Development-JS/AnimateTransition",
+  "keywords": [
+    "animation"
+  ],
+  "license": "MIT",
+  "main": [
+    "src/animateTransition.min.js",
+    "src/animateTransition.source.js"
+  ],
+  "name": "animate-transition",
+  "private": false,
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rapid-Application-Development-JS/AnimateTransition.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/mobidevpublisher/RAD.JS.git"
-  },
-  "keywords": [
-    "RAD.js",
-    "mobile",
-    "javascript",
-    "RAD",
-    "animation"
-  ],
-  "author": "Yuriy Luchaninov <y.luchaninov@mobidev.biz> (http://mobidev.biz/)",
-  "contributors": [
-    {
-      "name": "Yuriy Luchaninov",
-      "email": "y.luchaninov@mobidev.biz"
-    }
-  ],
-  "readmeFilename": "README.md",
-  "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-cli": "~0.1.13",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-concat": "^0.4.0",
-    "grunt-contrib-copy": "~0.5.0",
-    "grunt-contrib-uglify": "~0.2.4",
-    "grunt-pure-cjs": "^1.4.0",
-    "grunt-stripcomments": "^0.3.1"
-  }
+  "version": "0.0.1"
 }
