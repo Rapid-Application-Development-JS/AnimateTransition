@@ -1,0 +1,51 @@
+{
+  "authors": [
+    "Yuriy Luchaninov <y.luchaninov@mobidev.biz> (http://mobidev.biz/)"
+  ],
+  "contributors": [
+    {
+      "email": "y.luchaninov@mobidev.biz",
+      "name": "Yuriy Luchaninov"
+    },
+    {
+      "email": "t.sakharova@mobidev.biz",
+      "name": "Tatyana Sakharova"
+    }
+  ],
+  "dependencies": {},
+  "description": "Library for transition animations between blocks (pages) in the application",
+  "devDependencies": {
+    "grunt": "~0.4.*",
+    "grunt-cli": "~0.1.*",
+    "grunt-contrib-clean": "^0.5.*",
+    "grunt-contrib-concat": "^0.4.*",
+    "grunt-contrib-copy": "~0.5.*",
+    "grunt-contrib-uglify": "~0.2.*",
+    "grunt-pure-cjs": "^1.4.*",
+    "grunt-stripcomments": "^0.3.*"
+  },
+  "homepage": "https://github.com/Rapid-Application-Development-JS/AnimateTransition",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "keywords": [
+    "animation"
+  ],
+  "license": "MIT",
+  "main": [
+    "src/animateTransition.min.js",
+    "src/animateTransition.source.js"
+  ],
+  "moduleType": [
+    "globals",
+    "amd",
+    "es6",
+    "node"
+  ],
+  "name": "animate-transition",
+  "version": "0.0.1"
+}
